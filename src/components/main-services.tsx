@@ -14,12 +14,12 @@ type Service = {
 const SERVICES: Service[] = [
   {
     title: "3T MRI",
-    icon: "/features/heartbeat.svg",
+    icon: "/services-icons/mri.svg",
     body: ["Exceptional detail for ", { bold: "brain, spine, joints" }, " and more."],
   },
   {
     title: "96 Slice CT",
-    icon: "/features/brain.svg",
+    icon: "/services-icons/ct.svg",
     body: [
       { bold: "Rapid full-body scans" },
       " (trauma, chest, abdomen, angiography) at ultra-low dose.",
@@ -27,7 +27,7 @@ const SERVICES: Service[] = [
   },
   {
     title: "Digital X-Ray",
-    icon: "/features/ear.svg",
+    icon: "/services-icons/xray.svg",
     body: [
       "High-speed digital X-rays for ",
       { bold: "chest, bones, and all general radiography." },
@@ -35,7 +35,7 @@ const SERVICES: Service[] = [
   },
   {
     title: "Mammography",
-    icon: "/features/heartbeat.svg",
+    icon: "/services-icons/mammo.svg",
     body: [
       { bold: "Digital breast imaging" },
       " for screening and diagnostics, with 2D/3D (tomosynthesis) options for early detection.",
@@ -43,7 +43,7 @@ const SERVICES: Service[] = [
   },
   {
     title: "Ultrasound & Doppler",
-    icon: "/features/brain.svg",
+    icon: "/services-icons/ultrasound.svg",
     body: [
       "High-resolution sonography for ",
       { bold: "abdomen, pelvic, thyroid, obstetrics, vascular studies" },
@@ -52,7 +52,7 @@ const SERVICES: Service[] = [
   },
   {
     title: "Dental CBCT/OPG",
-    icon: "/features/ear.svg",
+    icon: "/services-icons/dental.svg",
     body: [
       { bold: "3D cone-beam CT" },
       " and panoramic X-rays for accurate dental implant planning and tooth evaluation.",
@@ -60,7 +60,7 @@ const SERVICES: Service[] = [
   },
   {
     title: "Neurodiagnostics",
-    icon: "/features/heartbeat.svg",
+    icon: "/services-icons/neuro.svg",
     body: [
       "Advanced ",
       { bold: "EEG" },
@@ -71,7 +71,7 @@ const SERVICES: Service[] = [
   },
   {
     title: "Bone Densitometry",
-    icon: "/features/brain.svg",
+    icon: "/services-icons/bone.svg",
     body: [
       "Gold-standard osteoporosis screening with quick, non-invasive ",
       { bold: "DEXA" },
@@ -80,7 +80,7 @@ const SERVICES: Service[] = [
   },
   {
     title: "Pathology Laboratory",
-    icon: "/features/ear.svg",
+    icon: "/services-icons/pathology.svg",
     body: [
       "Full-service lab for ",
       { bold: "blood, urine, and other tests" },
@@ -133,13 +133,13 @@ export function MainServices() {
 function ServiceCard({ title, icon, body, href = "/services" }: Service) {
   return (
     <article className="group flex h-full min-h-[320px] flex-col justify-between gap-6 rounded-[20px] bg-[#f7f7f7] px-[20px] py-[36px] transition-shadow duration-200 hover:shadow-[0_10px_30px_-12px_rgba(16,24,129,0.18)] md:px-[24px] md:py-[44px] 2xl:min-h-[349px] 2xl:gap-[24px] 2xl:px-[24px] 2xl:py-[48px]">
-      <div className="inline-flex items-start self-start rounded-full bg-[#e6e6e6] p-[8px]">
+      <div className="inline-flex size-[52px] items-center justify-center self-start rounded-full bg-[#e6e6e6] p-[8px] 2xl:size-[56px]">
         <Image
           src={icon}
           alt=""
-          width={36}
-          height={36}
-          className="size-[36px] 2xl:size-[40px]"
+          width={40}
+          height={40}
+          className="h-full w-auto max-h-full max-w-full object-contain"
         />
       </div>
 

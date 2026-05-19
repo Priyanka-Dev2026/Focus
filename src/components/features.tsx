@@ -15,22 +15,22 @@ const FEATURES: Feature[] = [
   {
     title: "3T MRI",
     body: "Exceptional detail for brain, spine, joints and more.",
-    icon: "/features/heartbeat.svg",
+    icon: "/features/mri.svg",
   },
   {
     title: "96 Slice CT",
     body: "Rapid full-body scans (trauma, chest, abdomen, angiography) at ultra-low dose.",
-    icon: "/features/brain.svg",
+    icon: "/features/ct.svg",
   },
   {
     title: "Digital X-Ray",
     body: "High-speed digital X-rays for chest, bones, and all general radiography. Advanced detectors give faster scans, superior image quality, and much lower radiation.",
-    icon: "/features/ear.svg",
+    icon: "/features/xray.svg",
   },
   {
     title: "Mammography",
     body: "Specializing in children's healthcare, from infancy to adolescence.",
-    icon: "/features/baby.svg",
+    icon: "/features/mammo.svg",
   },
 ];
 
