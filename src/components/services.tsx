@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 
 type ServiceCardProps = {
   title: string;
@@ -150,8 +150,13 @@ function ServiceCard({ title, body, image }: ServiceCardProps) {
           className="scale-[1.08] object-cover"
         />
         <div className="absolute inset-0" style={GRADIENT_STYLE} />
-        <h3 className="absolute right-[30px] bottom-[30px] left-[30px] font-display text-[22px] font-medium leading-[1.2] tracking-[-0.02em] text-white md:text-[26px] xl:text-[28px] 2xl:text-[32px] 2xl:tracking-[-0.64px]">
-          {title}
+        <h3 className="absolute right-[30px] bottom-[30px] left-[30px] flex items-end justify-between gap-3 font-display text-[22px] font-medium leading-[1.2] tracking-[-0.02em] text-white md:text-[26px] xl:text-[28px] 2xl:text-[32px] 2xl:tracking-[-0.64px]">
+          <span>{title}</span>
+          <ArrowUpRight
+            aria-hidden
+            className="size-6 shrink-0 text-white lg:hidden"
+            strokeWidth={2.25}
+          />
         </h3>
       </div>
 
