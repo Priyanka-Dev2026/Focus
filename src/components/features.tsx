@@ -9,6 +9,7 @@ type Feature = {
   title: string;
   body: string;
   icon: string;
+  slug: string;
 };
 
 const FEATURES: Feature[] = [
@@ -16,21 +17,25 @@ const FEATURES: Feature[] = [
     title: "3T MRI",
     body: "Exceptional detail for brain, spine, joints and more.",
     icon: "/features/mri.svg",
+    slug: "3t-mri",
   },
   {
     title: "96 Slice CT",
     body: "Rapid full-body scans (trauma, chest, abdomen, angiography) at ultra-low dose.",
     icon: "/features/ct.svg",
+    slug: "96-slice-ct",
   },
   {
     title: "Digital X-Ray",
     body: "High-speed digital X-rays for chest, bones, and all general radiography. Advanced detectors give faster scans, superior image quality, and much lower radiation.",
     icon: "/features/xray.svg",
+    slug: "digital-xray",
   },
   {
     title: "Mammography",
     body: "Specializing in children's healthcare, from infancy to adolescence.",
     icon: "/features/mammo.svg",
+    slug: "mammography",
   },
 ];
 
@@ -121,7 +126,7 @@ export function Features() {
   );
 }
 
-function FeatureCard({ title, body, icon }: Feature) {
+function FeatureCard({ title, body, icon, slug }: Feature) {
   return (
     <article
       data-feature-card
@@ -141,10 +146,10 @@ function FeatureCard({ title, body, icon }: Feature) {
       </div>
 
       <Link
-        href="/book"
+        href={`/services/${slug}`}
         className="inline-flex items-center gap-[6px] text-[14px] font-medium leading-[1.5] tracking-[-0.01em] text-[#101881] transition-colors hover:text-[#0b0e6b] 2xl:text-[16px] 2xl:tracking-[-0.32px]"
       >
-        Book Consultation
+        Learn More
         <ArrowRight
           className="size-4 transition-transform duration-200 group-hover:translate-x-1"
           strokeWidth={2.25}

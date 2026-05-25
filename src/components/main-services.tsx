@@ -7,6 +7,7 @@ type BodyPart = string | { bold: string };
 type Service = {
   title: string;
   icon: string;
+  slug: string;
   body: BodyPart[];
   href?: string;
 };
@@ -15,11 +16,13 @@ const SERVICES: Service[] = [
   {
     title: "3T MRI",
     icon: "/services-icons/mri.svg",
+    slug: "3t-mri",
     body: ["Exceptional detail for ", { bold: "brain, spine, joints" }, " and more."],
   },
   {
     title: "96 Slice CT",
     icon: "/services-icons/ct.svg",
+    slug: "96-slice-ct",
     body: [
       { bold: "Rapid full-body scans" },
       " (trauma, chest, abdomen, angiography) at ultra-low dose.",
@@ -28,6 +31,7 @@ const SERVICES: Service[] = [
   {
     title: "Digital X-Ray",
     icon: "/services-icons/xray.svg",
+    slug: "digital-xray",
     body: [
       "High-speed digital X-rays for ",
       { bold: "chest, bones, and all general radiography." },
@@ -36,6 +40,7 @@ const SERVICES: Service[] = [
   {
     title: "Mammography",
     icon: "/services-icons/mammo.svg",
+    slug: "mammography",
     body: [
       { bold: "Digital breast imaging" },
       " for screening and diagnostics, with 2D/3D (tomosynthesis) options for early detection.",
@@ -44,6 +49,7 @@ const SERVICES: Service[] = [
   {
     title: "Ultrasound & Doppler",
     icon: "/services-icons/ultrasound.svg",
+    slug: "ultrasound-doppler",
     body: [
       "High-resolution sonography for ",
       { bold: "abdomen, pelvic, thyroid, obstetrics, vascular studies" },
@@ -53,6 +59,7 @@ const SERVICES: Service[] = [
   {
     title: "Dental CBCT/OPG",
     icon: "/services-icons/dental.svg",
+    slug: "dental-cbct",
     body: [
       { bold: "3D cone-beam CT" },
       " and panoramic X-rays for accurate dental implant planning and tooth evaluation.",
@@ -61,6 +68,7 @@ const SERVICES: Service[] = [
   {
     title: "Neurodiagnostics",
     icon: "/services-icons/neuro.svg",
+    slug: "neurodiagnostics",
     body: [
       "Advanced ",
       { bold: "EEG" },
@@ -72,6 +80,7 @@ const SERVICES: Service[] = [
   {
     title: "Bone Densitometry",
     icon: "/services-icons/bone.svg",
+    slug: "bone-densitometry",
     body: [
       "Gold-standard osteoporosis screening with quick, non-invasive ",
       { bold: "DEXA" },
@@ -81,6 +90,7 @@ const SERVICES: Service[] = [
   {
     title: "Pathology Laboratory",
     icon: "/services-icons/pathology.svg",
+    slug: "pathology",
     body: [
       "Full-service lab for ",
       { bold: "blood, urine, and other tests" },
@@ -130,7 +140,8 @@ export function MainServices() {
   );
 }
 
-function ServiceCard({ title, icon, body, href = "/services" }: Service) {
+function ServiceCard({ title, icon, slug, body, href }: Service) {
+  const targetHref = href ?? `/services/${slug}`;
   return (
     <article className="group flex h-full min-h-[320px] flex-col justify-between gap-6 rounded-[20px] bg-[#f7f7f7] px-[20px] py-[36px] transition-shadow duration-200 hover:shadow-[0_10px_30px_-12px_rgba(16,24,129,0.18)] md:px-[24px] md:py-[44px] 2xl:min-h-[349px] 2xl:gap-[24px] 2xl:px-[24px] 2xl:py-[48px]">
       <div className="inline-flex size-[52px] items-center justify-center self-start rounded-full bg-[#e6e6e6] p-[8px] 2xl:size-[56px]">
@@ -161,7 +172,7 @@ function ServiceCard({ title, icon, body, href = "/services" }: Service) {
       </div>
 
       <Link
-        href={href}
+        href={targetHref}
         className="inline-flex items-center gap-[8px] text-[15px] font-medium leading-[1.5] tracking-[-0.01em] text-[#101881] transition-colors hover:text-[#0b0e6b] xl:text-[18px] 2xl:text-[20px] 2xl:tracking-[-0.4px]"
       >
         Learn More

@@ -9,6 +9,7 @@ const QUICK_LINKS = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
   { label: "Services", href: "/services" },
+  { label: "Patient Guide", href: "/patient-guide" },
   { label: "Contact Us", href: "/contact" },
 ] as const;
 

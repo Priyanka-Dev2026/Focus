@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { BreadcrumbBar } from "@/components/breadcrumb";
 import { PageHero } from "@/components/page-hero";
 import { MainServices } from "@/components/main-services";
 
@@ -11,6 +12,12 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <>
+      <BreadcrumbBar
+        items={[
+          { label: "Home", href: "/" },
+          { label: "Our Services" },
+        ]}
+      />
       <PageHero
         eyebrow="Our Services"
         title="Solving the world's toughest medical problems"
